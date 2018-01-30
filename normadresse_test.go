@@ -1,10 +1,17 @@
 package normadresse
 
 import (
+	"fmt"
+	"strings"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
+
+func ExampleNormalize() {
+	fmt.Println(strings.ToUpper(Normalize("BOULEVARD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY")))
+	// Output: BD MAL J M DE LATTRE DE TASSIGNY
+}
 
 func Test(t *testing.T) {
 	Convey("Test package", t, FailureContinues, func() {
