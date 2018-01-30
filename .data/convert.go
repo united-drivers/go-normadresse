@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"regexp"
 	"sort"
 	"strconv"
 )
@@ -42,12 +43,27 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+		long := line[1]
+		short := line[2]
+		short = regexp.MustCompile(`\\g<([0-9]+)>`).ReplaceAllString(short, "$${$1}")
 		entries = append(entries, entry{
 			step:  step,
-			long:  line[1],
-			short: line[2],
+			long:  long,
+			short: short,
 		})
 	}
+
+	// add missing rules (based on normaddress.py)
+	entries = append(entries, entry{
+		step:  10,
+		long:  " (LE|LA|LES|AU|AUX|DE|DU|DES|D|ET|A|L|SUR|EN) ",
+		short: " ",
+	})
+	entries = append(entries, entry{
+		step:  12,
+		long:  " (le|la|les|au|aux|de|du|des|d|et|a|l|sur) ",
+		short: " ",
+	})
 
 	sort.Slice(entries, func(i, j int) bool {
 		return entries[i].step < entries[j].step
