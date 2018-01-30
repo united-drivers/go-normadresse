@@ -4,7 +4,9 @@
 
 French Postal Addresses Normalizer (Golang port of [etalab/normadresse](https://github.com/etalab/normadresse))
 
-## Example
+## Usage
+
+Install with `go get github.com/united-drivers/go-normadresse`
 
 ```go
 import "github.com/united-drivers/go-normadresse"
