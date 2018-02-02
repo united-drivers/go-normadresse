@@ -21,7 +21,15 @@ fmt.Println(strings.ToUpper(normadresse.Normalize("BOULEVARD DU MARECHAL JEAN MA
 
 More usage on [GoDoc](https://godoc.org/github.com/united-drivers/go-normadresse), or in the [test file](https://github.com/united-drivers/go-normadresse/blob/master/normadresse_test.go).
 
-## Disclaimer
+## Under the hood
+
+This library applies rules (sorted with a priority), from the [normadresse.csv](https://github.com/etalab/normadresse/blob/master/normadresse.csv) file, and returns the result as soon as the modified string fits below a max length
+
+Example:
+
+![normadresse example](https://raw.githubusercontent.com/united-drivers/go-normadresse/master/.assets/example.svg?sanitize=true)
+
+### Disclaimer
 
 The original version written in Python uses [more efficient rule priorities](https://github.com/etalab/normadresse/blob/master/normadresse.py) (than [ours](https://github.com/united-drivers/go-normadresse/blob/master/normadresse.go)), which often results in better outputs
 
