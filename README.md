@@ -1,5 +1,6 @@
 # go-normadresse
 
+[![CircleCI](https://circleci.com/gh/united-drivers/go-normadresse.svg?style=svg)](https://circleci.com/gh/united-drivers/go-normadresse)
 [![GoDoc](https://godoc.org/github.com/united-drivers/go-normadresse?status.svg)](https://godoc.org/github.com/united-drivers/go-normadresse)
 [![Go Report Card](https://goreportcard.com/badge/github.com/united-drivers/go-normadresse)](https://goreportcard.com/report/github.com/united-drivers/go-normadresse)
 [![License](https://img.shields.io/github/license/united-drivers/go-normadresse.svg)](https://github.com/united-drivers/go-normadresse/blob/master/LICENSE)
