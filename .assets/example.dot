@@ -1,0 +1,15 @@
+digraph G {
+    node[shape=box,style=rounded,color=blue,fontcolor=blue];
+    edge[color=purple,fontcolor=purple];
+
+    a[label="BOULEVARD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY"];
+    b[label="BD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY"];
+    c[label="BD DU MAL JEAN MARIE DE LATTRE DE TASSIGNY"];
+    d[label="BD DU MAL J M DE LATTRE DE TASSIGNY"];
+    e[label="BD MAL J M DE LATTRE DE TASSIGNY"];
+
+    a -> b[label="simplify street type"];
+    b -> c[label="simplify titles (military, religious, ...)"];
+    c -> d[label="simplify firstnames"];
+    d -> e[label="remove separators"];
+}
