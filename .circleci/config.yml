@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang
+    working_directory: /go/src/github.com/united-drivers/go-normadresse
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-pkg-cache
+      - run: go get -v .
+      - run: go get -t -v .
+      - run: make test
+      - save_cache:
+          key: v1-pkg-cache
+          paths:
+            - "/go/pkg"
