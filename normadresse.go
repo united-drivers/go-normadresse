@@ -26,7 +26,7 @@ func NormalizeLength(str string, maxLen int) string {
 		re := regexp.MustCompile(rule.long)
 		str = re.ReplaceAllString(str, rule.short)
 		if len(str) <= maxLen {
-			return str
+			break
 		}
 	}
 	str = strings.Replace(str, " @", "", -1)

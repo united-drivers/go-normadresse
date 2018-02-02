@@ -13,6 +13,21 @@ func ExampleNormalize() {
 	// Output: BD MAL J M DE LATTRE DE TASSIGNY
 }
 
+func ExampleNormalizeLength_100() {
+	fmt.Println(strings.ToUpper(NormalizeLength("BOULEVARD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY", 100)))
+	// Output: BOULEVARD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY
+}
+
+func ExampleNormalizeLength_32() {
+	fmt.Println(strings.ToUpper(NormalizeLength("BOULEVARD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY", 32)))
+	// Output: BD MAL J M DE LATTRE DE TASSIGNY
+}
+
+func ExampleNormalizeLength_10() {
+	fmt.Println(strings.ToUpper(NormalizeLength("BOULEVARD DU MARECHAL JEAN MARIE DE LATTRE DE TASSIGNY", 10)))
+	// Output: BD MAL J M LATTRE TASSIGNY
+}
+
 func Test(t *testing.T) {
 	Convey("Test package", t, FailureContinues, func() {
 		tests := [][]string{
